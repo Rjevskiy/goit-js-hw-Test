@@ -1,10 +1,10 @@
 console.log('Gallery loaded');
 
 import SimpleLightbox from 'simplelightbox';
-// Импортируем стили библиотеки
+
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-// Массив изображений
+
 const galleryItems = [
   {
     href: 'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
@@ -53,13 +53,13 @@ const galleryItems = [
     },
 ];
 
-// Получаем контейнер для галереи
+
 const galleryContainer = document.querySelector('.gallery');
 
-// Очищаем контейнер перед добавлением элементов
+
 galleryContainer.innerHTML = '';
 
-// Добавляем изображения в галерею
+
 galleryItems.forEach(item => {
   const galleryItem = document.createElement('li');
   galleryItem.classList.add('gallery-item');
@@ -78,7 +78,7 @@ galleryItems.forEach(item => {
   galleryContainer.appendChild(galleryItem);
 });
 
-// Инициализируем SimpleLightbox с нужными настройками
+
 let lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionPosition: 'bottom',
