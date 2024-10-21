@@ -6,8 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Form</title>
-  <script type="module" crossorigin src="/goit-js-hw-09_1/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-  <link rel="stylesheet" crossorigin href="/goit-js-hw-09_1/assets/styles-BE6uDJn7.css">
+  <script type="module" crossorigin src="/goit-js-hw-09_1/2-form.js"></script>
+  <link rel="modulepreload" crossorigin href="/goit-js-hw-09_1/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="stylesheet" crossorigin href="/goit-js-hw-09_1/assets/styles-B8snXXtJ.css">
 </head>
 
 <body>
@@ -18,7 +19,20 @@
       <a class="back-link" href="./index.html">Go back</a>
       <h1 class="main-title">Form</h1>
     </div>
+    <!-- Добавляем форму -->
+    <div class="feedback_div">
+      <form class="feedback_form">
+        <label class="feedback_label" for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+
+        <label class="feedback_label" for="message">Message</label>
+        <textarea class="feedback_message" name="message" id="message" required></textarea>
+
+        <button class="feedback_button" type="submit">Submit</button>
+      </form>
+    </div>
   </main>
+
 
 </body>
 
