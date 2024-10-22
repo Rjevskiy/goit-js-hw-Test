@@ -1,9 +1,5 @@
-console.log('Gallery loaded');
-
 import SimpleLightbox from 'simplelightbox';
-
 import 'simplelightbox/dist/simple-lightbox.min.css';
-
 
 const galleryItems = [
   {
@@ -54,30 +50,19 @@ const galleryItems = [
 ];
 
 
+
 const galleryContainer = document.querySelector('.gallery');
 
 
-galleryContainer.innerHTML = '';
+const galleryMarkup = galleryItems.map(({ href, src, alt }) => `
+  <li class="gallery-item">
+    <a class="gallery-link" href="${href}">
+      <img class="gallery-image" src="${src}" alt="${alt}" />
+    </a>
+  </li>
+`).join('');
 
-
-galleryItems.forEach(item => {
-  const galleryItem = document.createElement('li');
-  galleryItem.classList.add('gallery-item');
-
-  const galleryLink = document.createElement('a');
-  galleryLink.classList.add('gallery-link');
-  galleryLink.href = item.href;
-
-  const galleryImage = document.createElement('img');
-  galleryImage.classList.add('gallery-image');
-  galleryImage.src = item.src;
-  galleryImage.alt = item.alt;
-
-  galleryLink.appendChild(galleryImage);
-  galleryItem.appendChild(galleryLink);
-  galleryContainer.appendChild(galleryItem);
-});
-
+galleryContainer.innerHTML = galleryMarkup;
 
 let lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
